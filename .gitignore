@@ -1,0 +1,9 @@
+# Compiled files
+*.tfstate
+*.tfstate*.backup
+
+# Assume plans are _.plan
+*.plan
+
+# Module directory
+.terraform/
