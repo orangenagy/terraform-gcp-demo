@@ -10,6 +10,8 @@ variable network {
   default = "default"
 }
 
+variable service_account_email {}
+
 variable project {}
 
 variable env {}
