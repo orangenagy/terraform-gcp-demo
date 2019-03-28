@@ -6,6 +6,10 @@ variable service_name {
   default = "xyz"
 }
 
+variable network {
+  default = "default"
+}
+
 variable project {}
 
 variable env {}

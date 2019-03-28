@@ -18,4 +18,20 @@ module "demo_mig" {
   service_port_name = "http"
   http_health_check = false
   compute_image     = "${var.image_id}"
+  target_tags       = ["allow-http"]
+  autoscaling       = true
+}
+
+resource "google_compute_firewall" "default-ssh" {
+  project = "${var.project}"
+  name    = "${var.service_name}-${var.env}-vm-http"
+  network = "${var.network}"
+
+  allow {
+    protocol = "tcp"
+    ports    = ["80"]
+  }
+
+  source_ranges = ["0.0.0.0/0"]
+  target_tags   = ["allow-http"]
 }
