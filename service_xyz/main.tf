@@ -21,6 +21,7 @@ module "demo_mig" {
   target_tags           = ["allow-http"]
   autoscaling           = true
   service_account_email = "${var.service_account_email}"
+  startup_script        = "gsutil cp gs://${var.code_bucket}/service/${var.service_name}/code_versions/`gsutil cat gs://${var.code_bucket}/service/${var.service_name}/env/${var.env}/version.txt`/index.html /var/www/html/"
 }
 
 resource "google_compute_firewall" "default-ssh" {

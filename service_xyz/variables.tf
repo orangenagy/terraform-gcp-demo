@@ -12,6 +12,8 @@ variable network {
 
 variable service_account_email {}
 
+variable code_bucket {}
+
 variable project {}
 
 variable env {}
